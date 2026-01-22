@@ -1,0 +1,42 @@
+Can you build me a python application that i can use to practice mental maths?
+
+I want a home screen that lets me pick:
+
+1) the level (you click on it and there's a dropdown - this whole thing should be keyboard based)
+2) the number of questions (A textbox appears where you type the number of questions you want to do)
+3) The types of questions (Again, dropdown menu that's keyboard based):
+  a) Addition
+  b) Subtraction
+  c) Multiplication
+  d) Division
+  c) Powers
+  d) Roots
+  e) Random
+
+The way I want levels to work is like this:
+- Addition
+Level 1: Up to 100
+Level 2: Up to 1000
+Level 3: Up to 10000
+Level 4: Up to 100000
+
+- Subtraction
+Level 1: Up to 100
+Level 2: Up to 1000
+Level 3: Up to 10000
+Level 4: Up to 100000
+
+- Multiplication
+Level 1: Up to 12
+(You decide the levels beyond that - not sure what's appropriate)
+
+- Division
+(You decide the levels - not sure what's appropriate)
+
+- Powers
+(You decide the levels - not sure what's appropriate)
+
+- Roots
+(You decide the levels - not sure what's appropriate)
+
+So the way someone would use this is, you would have an interface that shows the level to set it to, the type of question, and the amount of questions you want to do, then you select the type of question and you have another interface where you see a text box in the middle of the terminal, (remember this whole thing is terminal based), where you type your answer, above is the question you need to solve, above that is the amount of points you get in the session, (so when you get a question correctly, you get a point, when you don't you don't get a point), the question number (out of an amount of questions you picked), and on the bottom corner you have an exit button. When you press the exit button, it comes up with a popup that asks (Are you sure you want to exit? with a yes and a no.)
