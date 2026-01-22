@@ -30,6 +30,42 @@ def get_levels():
     }
 
 
+LEVEL_DESCRIPTIONS = {
+    "Addition": [
+        "Numbers up to 100",
+        "Numbers up to 1,000",
+        "Numbers up to 10,000",
+        "Numbers up to 100,000",
+    ],
+    "Subtraction": [
+        "Numbers up to 100",
+        "Numbers up to 1,000",
+        "Numbers up to 10,000",
+        "Numbers up to 100,000",
+    ],
+    "Multiplication": [
+        "Tables up to 12",
+        "Numbers up to 20",
+        "Numbers up to 50",
+        "Numbers up to 100",
+    ],
+    "Division": [
+        "Divisors up to 12",
+        "Divisors up to 20",
+        "Divisors up to 50",
+        "Divisors up to 100",
+    ],
+    "Powers": [
+        "Exponents up to 2",
+        "Exponents up to 3",
+        "Exponents up to 4",
+        "Exponents up to 5",
+    ],
+    "Roots": ["Roots up to 10", "Roots up to 50", "Roots up to 100", "Roots up to 500"],
+    "Random": ["Varies randomly"],
+}
+
+
 def generate_question(qtype, level):
     if qtype == "Addition":
         a = random.randint(1, level)
@@ -84,6 +120,16 @@ def center_text(win, y, text, bold=False):
         win.attroff(curses.A_BOLD)
 
 
+def draw_level_description(win, qtype, level):
+    if qtype in LEVEL_DESCRIPTIONS:
+        descriptions = LEVEL_DESCRIPTIONS[qtype]
+        idx = min(level - 1, len(descriptions) - 1)  # prevent out-of-range
+        desc = descriptions[idx]
+    else:
+        desc = ""
+    center_text(win, curses.LINES - 3, f"Level {level}: {desc}")
+
+
 # -----------------------------
 # Menu screen
 # -----------------------------
@@ -114,6 +160,8 @@ def menu(stdscr):
             else:
                 text = "Start"
             stdscr.addstr(5 + i * 2, 10, f"{marker} {text}")
+
+        draw_level_description(stdscr, qtypes[qtype_idx], level)
 
         key = stdscr.getch()
 
